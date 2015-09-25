@@ -18,5 +18,6 @@ group :development do
 end
 
 gem 'rails_12factor', group: :production
+gem 'rails_serve_static_assets'
 
 ruby "2.2.3"
