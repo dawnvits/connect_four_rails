@@ -1,0 +1,230 @@
+<div class="ui hidden divider"></div>
+
+<div class="ui grid">
+
+	<div class="four wide column">
+		<div class="ui small header center aligned">
+			<div class="ui large yellow circular label"></div>&nbsp;Player 1
+		</div>
+		<% if @player_one.active %>
+			<h4 class="ui center aligned icon header">
+			  <i class="circular green checkmark icon"></i>
+			  Your Turn!
+			</h4>
+		<% end %>
+	</div>
+
+	<div class="eight wide column">
+		<div class="ui seven column grid center aligned">
+
+		 	<div class="blue column" id="column1">
+
+				<%= link_to('<i class="black pointing down icon"></i>'.html_safe, 
+							add_pieces_to_column_one_board_index_path, 
+							:method => :patch, 
+							:class => 'ui circular teal icon button',
+							:id => 'col1_btn') %>
+
+				<div class="ui hidden divider"></div>
+
+				<% @column_one_rows.each do |row| %>
+      				<% if row.taken? && row.player_one? %>
+      					<div class="ui yellow circular label" id="col1_row<%= row.id %>"></div>
+						<div class="ui hidden divider"></div>
+      				<% elsif row.taken? && !row.player_one %>
+      					<div class="ui red circular label" id="col1_row<%= row.id %>"></div>
+						<div class="ui hidden divider"></div>
+      				<% else %>
+      					<div class="ui white circular label" id="col1_row<%= row.id %>"></div>
+						<div class="ui hidden divider"></div>
+    				<% end %>
+    			<% end %>
+		 	</div><!-- column 1 -->
+
+			<div class="blue column" id="column2">
+		 		
+		 		<%= link_to('<i class="black pointing down icon"></i>'.html_safe, 
+							add_pieces_to_column_two_board_index_path, 
+							:method => :patch, 
+							:class => 'ui circular teal icon button',
+							:id => 'col2_btn') %>
+
+		 		<div class="ui hidden divider"></div>
+
+		 		<% cache do %>
+					<% @column_two_rows.each do |row| %>
+	      				<% if row.taken? && row.player_one? %>
+	      					<div class="ui yellow circular label" id="col2_row<%= row.id %>"></div>
+							<div class="ui hidden divider"></div>
+	      				<% elsif row.taken? && !row.player_one %>
+	      					<div class="ui red circular label" id="col2_row<%= row.id %>"></div>
+							<div class="ui hidden divider"></div>
+	      				<% else %>
+	      					<div class="ui white circular label" id="col2_row<%= row.id %>"></div>
+							<div class="ui hidden divider"></div>
+	    				<% end %>
+	    			<% end %>
+    			<% end %>
+		 	</div><!-- column 2 -->
+
+			<div class="blue column" id="column3">
+		 		<%= link_to('<i class="black pointing down icon"></i>'.html_safe, 
+							add_pieces_to_column_three_board_index_path, 
+							:method => :patch, 
+							:class => 'ui circular teal icon button',
+							:id => 'col3_btn') %>
+
+		 		<div class="ui hidden divider"></div>
+
+		 		<% cache do %>
+					<% @column_three_rows.each do |row| %>
+	      				<% if row.taken? && row.player_one? %>
+	      					<div class="ui yellow circular label" id="col3_row<%= row.id %>"></div>
+							<div class="ui hidden divider"></div>
+	      				<% elsif row.taken? && !row.player_one %>
+	      					<div class="ui red circular label" id="col3_row<%= row.id %>"></div>
+							<div class="ui hidden divider"></div>
+	      				<% else %>
+	      					<div class="ui white circular label" id="col3_row<%= row.id %>"></div>
+							<div class="ui hidden divider"></div>
+	    				<% end %>
+	    			<% end %>
+    			<% end %>
+		 	</div><!-- column 3 -->
+
+			<div class="blue column" id="column4">
+		 		<%= link_to('<i class="black pointing down icon"></i>'.html_safe, 
+							add_pieces_to_column_four_board_index_path, 
+							:method => :patch, 
+							:class => 'ui circular teal icon button',
+							:id => 'col4_btn') %>
+
+		 		<div class="ui hidden divider"></div>
+
+		 		<% cache do %>
+					<% @column_four_rows.each do |row| %>
+	      				<% if row.taken? && row.player_one? %>
+	      					<div class="ui yellow circular label" id="col4_row<%= row.id %>"></div>
+							<div class="ui hidden divider"></div>
+	      				<% elsif row.taken? && !row.player_one %>
+	      					<div class="ui red circular label" id="col4_row<%= row.id %>"></div>
+							<div class="ui hidden divider"></div>
+	      				<% else %>
+	      					<div class="ui white circular label" id="col4_row<%= row.id %>"></div>
+							<div class="ui hidden divider"></div>
+	    				<% end %>
+	    			<% end %>
+    			<% end %>
+		 	</div><!-- column 4 -->
+
+			<div class="blue column" id="column5">
+		 		<%= link_to('<i class="black pointing down icon"></i>'.html_safe, 
+							add_pieces_to_column_five_board_index_path, 
+							:method => :patch, 
+							:class => 'ui circular teal icon button',
+							:id => 'col5_btn') %>
+
+		 		<div class="ui hidden divider"></div>
+
+		 		<% cache do %>
+					<% @column_five_rows.each do |row| %>
+	      				<% if row.taken? && row.player_one? %>
+	      					<div class="ui yellow circular label" id="col5_row<%= row.id %>"></div>
+							<div class="ui hidden divider"></div>
+	      				<% elsif row.taken? && !row.player_one %>
+	      					<div class="ui red circular label" id="col5_row<%= row.id %>"></div>
+							<div class="ui hidden divider"></div>
+	      				<% else %>
+	      					<div class="ui white circular label" id="col5_row<%= row.id %>"></div>
+							<div class="ui hidden divider"></div>
+	    				<% end %>
+	    			<% end %>
+    			<% end %>
+		 	</div><!-- column 5 -->
+
+			<div class="blue column" id="column6">
+		 		<%= link_to('<i class="black pointing down icon"></i>'.html_safe, 
+							add_pieces_to_column_six_board_index_path, 
+							:method => :patch, 
+							:class => 'ui circular teal icon button',
+							:id => 'col6_btn') %>
+
+		 		<div class="ui hidden divider"></div>
+
+		 		<% cache do %>
+					<% @column_six_rows.each do |row| %>
+	      				<% if row.taken? && row.player_one? %>
+	      					<div class="ui yellow circular label" id="col6_row<%= row.id %>"></div>
+							<div class="ui hidden divider"></div>
+	      				<% elsif row.taken? && !row.player_one %>
+	      					<div class="ui red circular label" id="col6_row<%= row.id %>"></div>
+							<div class="ui hidden divider"></div>
+	      				<% else %>
+	      					<div class="ui white circular label" id="col6_row<%= row.id %>"></div>
+							<div class="ui hidden divider"></div>
+	    				<% end %>
+	    			<% end %>
+    			<% end %>
+		 	</div><!-- column 6 -->
+
+			<div class="blue column" id="column7">
+		 		<%= link_to('<i class="black pointing down icon"></i>'.html_safe, 
+							add_pieces_to_column_seven_board_index_path, 
+							:method => :patch, 
+							:class => 'ui circular teal icon button',
+							:id => 'col7_btn') %>
+
+		 		<div class="ui hidden divider"></div>
+
+		 		<% cache do %>
+					<% @column_seven_rows.each do |row| %>
+	      				<% if row.taken? && row.player_one? %>
+	      					<div class="ui yellow circular label" id="col7_row<%= row.id %>"></div>
+							<div class="ui hidden divider"></div>
+	      				<% elsif row.taken? && !row.player_one %>
+	      					<div class="ui red circular label" id="col7_row<%= row.id %>"></div>
+							<div class="ui hidden divider"></div>
+	      				<% else %>
+	      					<div class="ui white circular label" id="col7_row<%= row.id %>"></div>
+							<div class="ui hidden divider"></div>
+	    				<% end %>
+	    			<% end %>
+    			<% end %>
+		 	</div><!-- column 7 -->
+		</div>
+	</div>
+
+	<div class="four wide column">
+		<div class="ui small header center aligned">
+			<div class="ui large red circular label"></div>&nbsp;Player 2
+		</div>
+		<% if !@player_one.active %>
+			<h4 class="ui center aligned icon header">
+			  <i class="circular green checkmark icon"></i>
+			  Your Turn!
+			</h4>
+		<% end %>
+	</div>
+</div>
+
+<div class="ui page grid">
+	<div class="sixteen wide column center aligned">		
+		<% if !flash[:notice].blank? %>
+			<div class="row">
+				<div class="ui large teal compact message">
+					<div class="header">
+		    			<%= flash[:notice] %>
+		  			</div>
+		  			<p>It's 
+		  				<% if @player_one.active %>
+		  					Player 1
+		  				<% else %>
+		  					Player 2
+		  				<% end %> 
+		  			Turn</p>
+				</div>
+			</div>
+      	<% end %>
+      	<div id="winner"></div>
+	</div>
+</div>

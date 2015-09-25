@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Connect Four by Dawn Vits</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="ui menu">
+  <div class="item">
+    Connect Four by&nbsp;<a href="https://www.facebook.com/dawn.vits">Dawn Vits</a>
+  </div>
+  <div class="right menu">
+    <div class="item">
+    	<small>Code available at&nbsp;<a href="#">Github</a></small>
+  	</div>
+    <div class="item">
+        <%= link_to('Restart Game', 
+					 reset_board_index_path, 
+					 :method => :put, 
+					 :class => 'ui primary button') %>
+    </div>
+  </div>
+</div>
+
+<%= yield %>
+
+</body>
+</html>
